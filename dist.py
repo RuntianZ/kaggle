@@ -18,3 +18,5 @@ def check_all_ranks_alive(timeout=10) -> bool:
     except Exception as e:
         print(f"!!! Rank {dist.get_rank()}: Health check failed - {e}")
         return False
+    
+
