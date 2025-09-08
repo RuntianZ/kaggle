@@ -162,6 +162,9 @@ if __name__ == "__main__":
     train_pred_folder.mkdir(parents=True, exist_ok=True)
     pred_folder.mkdir(parents=True, exist_ok=True)
 
+    feature_cols = [f'feat1_{i}' for i in range(10)] + [f'feat2_{i}' for i in range(10)] + [f'col_{i}' for i in range(100)]
+    target_col = 'target'
+
 
     # Program 1: Get all sids
     print('Program 1')
@@ -178,9 +181,6 @@ if __name__ == "__main__":
     df_all_sid = pd.read_parquet(all_sid_path)
     all_sids = df_all_sid['sid'].unique().tolist()
     all_sids = all_sids[:3]  # TODO: For testing, only use first 3 sids
-
-    feature_cols = [f'feat1_{i}' for i in range(10)] + [f'feat2_{i}' for i in range(10)] + [f'col_{i}' for i in range(100)]
-    target_col = 'target'
 
     for sid in all_sids:
         sid_data_save_folder = data_save_folder / f"sid_{sid}"
