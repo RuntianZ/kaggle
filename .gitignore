@@ -163,3 +163,4 @@ catboost_info/
 *.out
 example/
 temp/
+*.csv
